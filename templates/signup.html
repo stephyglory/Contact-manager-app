@@ -1,0 +1,18 @@
+{%extends "index.html" %} 
+{%block content %}  
+    <div class="container-fluid backcard" style="margin-top: 3%;">
+            <div class="card text-center" style="width: 25rem;height:35rem;">
+                    <img src="https://i.ibb.co/yVSbVbt/user.png" alt="user" width="20%" style="margin-top: 10%;" />
+                    <h2>Sign Up</h2>
+                    <form action="/signup/" method="post">
+                        {%csrf_token%}
+                        <input style="max-width: 20rem;margin-top: 20%;" name="email" placeholder="Enter your email" type="email" class="form-control col-centered" required/>
+                        <input style="max-width: 20rem;margin-top: 5%;"name="password" placeholder="Enter your password" type="password" class="form-control col-centered" required/>
+                        <button class="btn btn-primary" style="margin-top: 10%;" type="submit" >Submit</button><br><br>
+                    </form>
+                    Already have an account ?<a href="/"> Sign in </a>
+            </div>
+            {%block alert%}
+            {%endblock%}
+    </div>
+{%endblock%}
